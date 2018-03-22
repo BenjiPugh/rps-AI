@@ -1,0 +1,52 @@
+# A machine learning algorithm for a turn based rock paper scissors. The human makes a move and the algorithm makes a move based on its previous successes in playing against the human. If that move is a success, it adds to the chance that it will play that move next time when the human plays the move
+
+import random
+rock = [5, 5, 5]
+paper = [5, 5, 5]
+scissors = [5, 5, 5]
+all_moves = [rock, paper, scissors]
+
+def user_play():
+  #ask the user to play a move
+  play = input("play rock, paper or scissors: ")
+  #if the play is not valid, ask to play again
+  while play != "rock" or play != "paper" or play != "scissors":
+    play = input("We detected that your guess wasn't valid; Please guess rock, paper or scissors")
+  else:
+    #parse the user input to make the user input readable by the machine
+    play = lower(play)
+    parsed_input = 0
+    if play == "rock":
+      parsed_input = 0
+    elif play == "paper":
+      parsed_input = 1
+    else:
+      parsed_input = 2
+    return all_moves[play]
+    
+def add_all(lst):
+  total = 0
+  for number in lst:
+    total += number
+  return total
+  
+def ai_guess():
+  user_move = user_play()
+  ai_move = null
+  #generate a random seed number between 0 and the total of all the 
+  seed = random.random(0, add_all(human))
+  #make a move based on the random seed and the values stored 
+  if seed <= user_move[0]:
+    ai_move = 0
+    print("The algorithm played rock")
+  elif seed > user_move[0] and seed <= user_move[1]:
+    ai_move = 1
+    print("The algorithm played paper")
+  else:
+    ai_move = 1
+    print("The algorithm played paper")
+  return ai_move
+  
+def reward(player_state, algorithm_state):
+  if player_state
+  
